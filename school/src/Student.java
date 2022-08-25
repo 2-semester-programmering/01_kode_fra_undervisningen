@@ -1,18 +1,36 @@
+import java.util.ArrayList;
+
 public class Student {
 
     // Data, attributter, Fields - Tilstand
-    private int cpr;  // 221080-8888  3112808888
-    private String navn;
+    private long cpr;  // 221080-8888  3112808888
+    private String name;
     private int age;
 
+    private ArrayList<Course> courses;
 
-    // Methoder - handlinger
+    public ArrayList<Course> getCourses() {
+        return courses;
+    }
 
-    public int getCpr() {
+    public void setCourses(Course cours) {
+        this.courses.add(cours);
+    }
+
+    public Student(long cpr, String name, int age) {
+        this.setCpr(cpr);
+        this.name = name;
+        this.age = age;
+        this.courses = new ArrayList<>();
+    }
+
+    // Methods - handlinger
+
+    public long getCpr() {
         return cpr;
     }
 
-    public void setCpr(int cpr) {
+    public void setCpr(long cpr) {
         if(cpr == 1234){
             this.cpr = cpr;
         }
@@ -21,12 +39,12 @@ public class Student {
         }
     }
 
-    public String getNavn() {
-        return navn;
+    public String getName() {
+        return name;
     }
 
-    public void setNavn(String navn) {
-        this.navn = navn;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
